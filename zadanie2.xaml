@@ -1,12 +1,16 @@
 ﻿<Window x:Class="Modul_4.zadanie2"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Modul_4"
-        mc:Ignorable="d"
-        Title="zadanie2" Height="450" Width="800">
+        Title="Учет продуктов" Height="350" Width="525">
     <Grid>
-        
+        <ListBox x:Name="ProductList" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" SelectionChanged="ProductList_SelectionChanged"/>
+        <TextBlock Text="Название:" HorizontalAlignment="Left" Margin="220,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="ProductName" HorizontalAlignment="Left" Margin="290,10,0,0" VerticalAlignment="Top" Width="200" IsReadOnly="True"/>
+
+        <TextBlock Text="Цена:" HorizontalAlignment="Left" Margin="220,40,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="ProductPrice" HorizontalAlignment="Left" Margin="290,40,0,0" VerticalAlignment="Top" Width="200" IsReadOnly="True"/>
+
+        <TextBlock Text="На складе:" HorizontalAlignment="Left" Margin="220,70,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="ProductStock" HorizontalAlignment="Left" Margin="290,70,0,0" VerticalAlignment="Top" Width="200" IsReadOnly="True"/>
     </Grid>
 </Window>

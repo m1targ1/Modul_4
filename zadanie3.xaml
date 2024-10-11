@@ -1,0 +1,38 @@
+﻿<Window x:Class="Modul_4.zadanie3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Учет студентов" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="5*" />
+        </Grid.ColumnDefinitions>
+
+        <ListBox x:Name="CoursesListBox" Grid.Column="0" SelectionChanged="CoursesListBox_SelectionChanged" Margin="10,10,10,10">
+            <ListBoxItem Content="1 курс" />
+            <ListBoxItem Content="2 курс" />
+            <ListBoxItem Content="3 курс" />
+        </ListBox>
+        <StackPanel Grid.Column="1" Margin="10,10,10,10">
+            <ListBox x:Name="StudentsListBox" SelectionChanged="StudentsListBox_SelectionChanged" 
+                     HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="100"/>
+            <DataGrid x:Name="GradesDataGrid" AutoGenerateColumns="False" Height="207">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Предмет" Binding="{Binding Subject}" Width="*"/>
+                    <DataGridTextColumn Header="Оценки" Binding="{Binding Grades}" Width="*"/>
+                    <DataGridTextColumn Header="Средний балл" Binding="{Binding Average}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <TextBlock x:Name="AverageGradeTextBlock" Margin="10,5,0,0" FontWeight="Bold"/>
+            <ComboBox x:Name="SubjectsComboBox" Width="200" IsEnabled="False"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                <Button Content="Добавить студента" Click="AddStudent_Click" Margin="5"/>
+                <Button Content="Удалить студента" Click="RemoveStudent_Click" Margin="5"/>
+                <Button Content="Исправить оценку" Click="UpdateGrade_Click" Margin="5"/>
+                <Button Content="Добавить оценку" Click="AddGrade_Click" Margin="5"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
