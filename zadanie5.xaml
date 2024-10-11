@@ -1,0 +1,20 @@
+﻿<Window x:Class="CombinedDrawingApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Приложение для рисования" Height="600" Width="615">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Button Name="DrawLineButton" Content="Нарисовать линию" Click="DrawLineButton_Click" Margin="0,0,10,0" Padding="10" FontWeight="Bold"/>
+                <Button Name="DrawCircleButton" Content="Нарисовать круг" Click="DrawCircleButton_Click" Margin="0,0,10,0" Padding="10" FontWeight="Bold"/>
+                <Button Name="DrawRectangleButton" Content="Нарисовать прямоугольник" Click="DrawRectangleButton_Click" Margin="0,0,10,0" FontWeight="Bold"/>
+                <Button Name="ClearCanvasButton" Content="Очистить холст" Click="ClearCanvasButton_Click" Padding="15" FontWeight="Bold"/>
+            </StackPanel>
+            <Canvas Name="DrawingCanvas" Background="White" Margin="10" 
+                    MouseDown="DrawingCanvas_MouseDown" 
+                    MouseMove="DrawingCanvas_MouseMove" 
+                    MouseUp="DrawingCanvas_MouseUp" 
+                    Height="500"/>
+        </StackPanel>
+    </Grid>
+</Window>
